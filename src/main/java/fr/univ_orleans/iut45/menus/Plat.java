@@ -21,4 +21,13 @@ class Plat {
     public double prixDeRevient() {
         return this.prix_de_revient;
     }
+
+    public boolean contientViande() {
+        return this.contient_viande;
+    }
+
+    public List<String> getListAlergene() {
+        return this.allergenes;
+    }
+
 }

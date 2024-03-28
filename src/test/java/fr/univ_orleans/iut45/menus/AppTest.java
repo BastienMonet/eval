@@ -60,4 +60,26 @@ public class AppTest
         assertTrue(ce_soir.estComplet());
     }
 
+
+    @Test
+    public void testContientDeLaViande(){
+        Plat carottes_rapees = new Plat("Carottes Rapées", true, new ArrayList<String>(), 0.5);
+        ArrayList<Plat> les_plats_principaux = new ArrayList<Plat>();
+        les_plats_principaux.add(carottes_rapees);
+        Menu ce_midi = new Menu(les_plats_principaux, new ArrayList<Plat>(), new ArrayList<Plat>());
+        assertTrue(ce_midi.contientDeLaViande());
+
+    }
+
+
+
+    @Test
+    public void testContientPasDAlergene(){
+        Plat carottes_rapees = new Plat("Carottes Rapées", true, new ArrayList<String>(), 0.5);
+        ArrayList<Plat> les_entrees = new ArrayList<Plat>();
+        les_entrees.add(carottes_rapees);
+        Menu ce_midi = new Menu(les_entrees, new ArrayList<Plat>(), new ArrayList<Plat>());
+        assertTrue(ce_midi.contientPasDAlergene("E621"));
+
+    }
 }
